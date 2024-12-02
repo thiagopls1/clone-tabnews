@@ -1,2 +1,6 @@
+# Build & Packages
 node_modules
 .next
+
+# VSCode
+.vscode
