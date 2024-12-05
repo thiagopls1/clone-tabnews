@@ -1,6 +1,6 @@
 # clone-tabnews
 
-Implementação do https://tabnews.com.br como forma de aprendizado 😀
+Implementação do https://tabnews.com.br no https://curso.dev como forma de aprendizado 😀
 
 ## ToDo:
 
