@@ -4,7 +4,7 @@ import database from "infra/database.js";
 // Mostrar a versão do banco de dados
 // Mostrar conexões máximas
 
-async function status(request, response) {
+export default async function status(request, response) {
   const maxConnectionsResult = await database.query("SHOW max_connections;");
   const maxConnections = maxConnectionsResult.rows[0].max_connections;
 
@@ -31,5 +31,3 @@ async function status(request, response) {
     },
   });
 }
-
-export default status;
