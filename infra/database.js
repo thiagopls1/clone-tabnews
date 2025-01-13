@@ -23,7 +23,6 @@ function getSSLValues() {
   return process.env.NODE_ENV === "production";
 }
 
-// Comment test
 async function getNewClient() {
   const client = new Client({
     host: process.env.POSTGRES_HOST,
