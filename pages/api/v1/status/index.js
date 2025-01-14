@@ -1,9 +1,5 @@
 import database from "infra/database.js";
 
-// TODOs:
-// Mostrar a versão do banco de dados
-// Mostrar conexões máximas
-
 export default async function status(request, response) {
   const maxConnectionsResult = await database.query("SHOW max_connections;");
   const maxConnections = maxConnectionsResult.rows[0].max_connections;
