@@ -19,12 +19,12 @@ export default [
   pluginReact.configs["flat"].recommended,
   {
     rules: {
-      "no-unused-vars": ["off"],
-      "no-undef": ["off"],
+      "no-unused-vars": ["error"],
+      "no-undef": ["error"],
     },
   },
   {
-    ignores: [".next/*"],
+    ignores: [".next/*", "infra/migrations/*"],
   },
   {
     ...pluginReact.configs.flat.recommended,
