@@ -19,8 +19,8 @@ export default [
   pluginReact.configs["flat"].recommended,
   {
     rules: {
-      "no-unused-vars": ["warn"],
-      "no-undef": ["warn"],
+      "no-unused-vars": ["off"],
+      "no-undef": ["off"],
     },
   },
   {
@@ -33,5 +33,9 @@ export default [
         version: "detect",
       },
     },
+    rules: {
+      "react/react-in-jsx-scope": "off",
+      "react/jsx-uses-react": "off",
+    }
   },
 ];
