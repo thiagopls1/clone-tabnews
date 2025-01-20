@@ -1,0 +1,14 @@
+name: Security
+
+on: pull_request
+
+jobs:
+  secret-scan:
+    name: Secret Scanning Review Action
+    runs-on: ubuntu-latest
+    steps:
+      - uses: advanced-security/secret-scanning-review-action@v2.2.0
+        with:
+          token: ${{ secrets.SECRET_SCAN_REVIEW_GITHUB_TOKEN }}
+          fail-on-alert: true
+          runtime: python
