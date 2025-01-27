@@ -3,6 +3,7 @@
   "version": "0.0.3",
   "description": "Clone do https://tabnews.com.br, feito para fins educativos",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "npm run services:up && npm run services:wait:database && npm run migrations:up && trap 'exit 0' INT TERM; next dev",
     "postdev": "npm run services:down",

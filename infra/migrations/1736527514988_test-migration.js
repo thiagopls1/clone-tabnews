@@ -1,8 +1,22 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
+/**
+ * @type {import('node-pg-migrate').ColumnDefinitions | undefined}
+ */
+const shorthands = undefined;
 
-exports.shorthands = undefined;
+/**
+ * @param pgm {import('node-pg-migrate').MigrationBuilder}
+ * @param run {() => void | undefined}
+ * @returns {Promise<void> | void}
+ */
+const up = (pgm) => {};
 
-exports.up = (pgm) => {};
+/**
+ * @param pgm {import('node-pg-migrate').MigrationBuilder}
+ * @param run {() => void | undefined}
+ * @returns {Promise<void> | void}
+ */
+const down = (pgm) => {};
 
-exports.down = (pgm) => {};
+export { up, down, shorthands };
