@@ -46,6 +46,25 @@ export class ServiceError extends BaseError {
   }
 }
 
+export class ValidationError extends BaseError {
+  constructor({ cause, message, action }) {
+    super(message || "Um erro de validação ocorreu", {
+      cause: cause,
+    });
+    this.action = action || "Ajuste os dados enviados e tente novamente";
+    this.statusCode = 400;
+  }
+
+  toJSON() {
+    return {
+      name: this.name,
+      message: this.message,
+      action: this.action,
+      status_code: this.statusCode,
+    };
+  }
+}
+
 export class MethodNotAllowedError extends BaseError {
   constructor() {
     super("Método não permitido para esse endpoint.");
