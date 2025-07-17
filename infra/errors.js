@@ -65,6 +65,26 @@ export class ValidationError extends BaseError {
   }
 }
 
+export class NotFoundError extends BaseError {
+  constructor({ cause, message, action }) {
+    super(message || "Recurso não encontrado no sistema", {
+      cause: cause,
+    });
+    this.action =
+      action || "Verifique se os parâmetros enviados estão corretos";
+    this.statusCode = 404;
+  }
+
+  toJSON() {
+    return {
+      name: this.name,
+      message: this.message,
+      action: this.action,
+      status_code: this.statusCode,
+    };
+  }
+}
+
 export class MethodNotAllowedError extends BaseError {
   constructor() {
     super("Método não permitido para esse endpoint.");
