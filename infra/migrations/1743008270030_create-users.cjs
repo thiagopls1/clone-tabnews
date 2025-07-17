@@ -3,7 +3,7 @@ exports.up = (pgm) => {
     id: {
       type: "uuid",
       primaryKey: true,
-      default: pgm.func("gen_random_uuid()")
+      default: pgm.func("gen_random_uuid()"),
     },
     // Como referência o github limita o nome de usuário até 39 caractéres
     username: {
@@ -26,14 +26,14 @@ exports.up = (pgm) => {
     created_at: {
       type: "timestamptz",
       notNull: true,
-      default: pgm.func("timezone('utc', now())")
+      default: pgm.func("timezone('utc', now())"),
     },
     updated_at: {
       type: "timestamptz",
       notNull: true,
-      default: pgm.func("timezone('utc', now())")
+      default: pgm.func("timezone('utc', now())"),
     },
-  })
+  });
 };
 
 exports.down = false;
