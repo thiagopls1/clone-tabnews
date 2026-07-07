@@ -6,7 +6,7 @@ async function hash(password) {
 }
 
 function getNumberOfRounds() {
-  const rounds = 1;
+  let rounds = 1;
   if (process.env.NODE_ENV === "production") {
     rounds = 14;
   }
