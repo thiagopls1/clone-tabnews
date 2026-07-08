@@ -102,3 +102,22 @@ export class MethodNotAllowedError extends BaseError {
     };
   }
 }
+
+export class UnauthorizedError extends BaseError {
+  constructor({ cause, message, action }) {
+    super(message || "Usuário não autenticado", {
+      cause: cause,
+    });
+    this.action = action || "Faça o login novamente para continuar";
+    this.statusCode = 401;
+  }
+
+  toJSON() {
+    return {
+      name: this.name,
+      message: this.message,
+      action: this.action,
+      status_code: this.statusCode,
+    };
+  }
+}
